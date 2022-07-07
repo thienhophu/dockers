@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres-13:
+    image: postgres:13
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12341234
+    volumes:
+      - postgres-13:/var/lib/postgresql/data
+
+volumes:
+  postgres-13:
+    driver: local
